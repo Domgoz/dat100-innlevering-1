@@ -1,63 +1,34 @@
 import java.util.Scanner;
 
-public class OppgaveB5 {
+public class O1 {
     public static void main(String[] args) {
-    
-        int[] F = new int[40];
-        int[] E = new int[10]; 
-        int[] D = new int[10];
-        int[] C = new int[20];
-        int[] B = new int[10];
-        int[] A = new int[11];
-        
-        for (int i = 0; i < F.length; i++) {
-            F[i] = i;
-        }
-        for (int i = 0; i < E.length; i++) {
-            E[i] = i + 40;
-        }
-        for (int i = 0; i < D.length; i++) {
-            D[i] = i + 50;
-        }
-        for (int i = 0; i < C.length; i++) {
-            C[i] = i + 60;
-        }
-        for (int i = 0; i < B.length; i++) {
-            B[i] = i + 80;
-        }
-        for (int i = 0; i < A.length; i++) {
-            A[i] = i + 90;
-        }
+        System.out.println("penger?");
+        Scanner userInput = new Scanner(System.in);
+        long penger = userInput.nextInt();
 
-        int n = 9;
-        for (int i = 0; i <= n; i++) {
-            System.out.println("poeng?");
-            Scanner userInput = new Scanner(System.in);
-            int poeng = userInput.nextInt();
-
-            if (poeng > 100 || poeng < 0) {
-                System.out.println("Feil Poeng verdi!");
-                System.out.println("Skriv inn på nytt.");
-                i--;
-                }
-            if (poeng >= F[0] && poeng <= F[F.length - 1]) {
-                    System.out.println("F");
-                }
-            if (poeng >= E[0] && poeng <= E[E.length - 1]) {
-                    System.out.println("E");
-                }
-            if (poeng >= D[0] && poeng <= D[D.length - 1]) {
-                    System.out.println("D");
-                }
-            if (poeng >= C[0] && poeng <= C[C.length - 1]) {
-                    System.out.println("C");
-                }
-            if (poeng >= B[0] && poeng <= B[B.length - 1]) {
-                    System.out.println("B");
-                }
-            if (poeng >= A[0] && poeng <= A[A.length - 1]) {
-                    System.out.println("A");
-                }
-            }
+        if (penger < 208050) {
+            System.out.println("Under trinnskatt");
         }
-}
+        if (penger > 208051 && penger < 292850) {
+            System.out.println("1.7%");
+            System.out.println("Skatten å betale"+ " " + (Math.round(0.017*penger)) + "kr");
+        }
+        if (penger > 292851 && penger < 670000) {
+            System.out.println("4%");
+            System.out.println("Skatten å betale"+ " " + (Math.round(0.04*penger)) + "kr");
+        }
+        if (penger > 670001 && penger < 937900) {
+            System.out.println("13.6%");
+            System.out.println("Skatten å betale"+ " " + (Math.round(0.136*penger)) + "kr");
+        }
+        if (penger > 937901 && penger < 1350000) {
+            System.out.println("16.6%");
+            System.out.println("Skatten å betale"+ " " + (Math.round(0.166*penger)) + "kr");
+        } 
+        if (penger > 1350001) {
+            System.out.println("17.6%");
+            System.out.println("Skatten å betale"+ " " + (Math.round(0.176*penger)) + "kr");
+        }
+        }      
+    }
+
